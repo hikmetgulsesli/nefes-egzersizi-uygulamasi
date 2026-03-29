@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary": "#ffb77c",
+              "on-surface": "#dfe2eb",
+              "on-tertiary-fixed-variant": "#6d3900",
+              "tertiary-container": "#e48f43",
+              "on-primary-fixed": "#001c38",
+              "background": "#10141a",
+              "on-tertiary-fixed": "#2e1500",
+              "secondary": "#c2c7d0",
+              "secondary-fixed-dim": "#c2c7d0",
+              "outline-variant": "#414752",
+              "surface-container-lowest": "#0a0e14",
+              "tertiary-fixed-dim": "#ffb77c",
+              "surface-container-highest": "#31353c",
+              "surface-container": "#1c2026",
+              "on-secondary": "#2c3138",
+              "secondary-fixed": "#dee2ec",
+              "primary-fixed": "#d3e4ff",
+              "surface-container-low": "#181c22",
+              "on-tertiary": "#4d2700",
+              "inverse-primary": "#0060aa",
+              "outline": "#8b919d",
+              "on-primary-fixed-variant": "#004882",
+              "on-error": "#690005",
+              "surface-container-high": "#262a31",
+              "surface": "#10141a",
+              "on-tertiary-container": "#5a2e00",
+              "on-primary-container": "#003a6b",
+              "error": "#ffb4ab",
+              "secondary-container": "#42474f",
+              "primary-container": "#58a6ff",
+              "tertiary-fixed": "#ffdcc2",
+              "surface-bright": "#353940",
+              "surface-variant": "#31353c",
+              "on-surface-variant": "#c0c7d4",
+              "inverse-surface": "#dfe2eb",
+              "surface-tint": "#a2c9ff",
+              "on-primary": "#00315c",
+              "primary-fixed-dim": "#a2c9ff",
+              "surface-dim": "#10141a",
+              "error-container": "#93000a",
+              "on-error-container": "#ffdad6",
+              "on-background": "#dfe2eb",
+              "on-secondary-fixed": "#171c23",
+              "on-secondary-fixed-variant": "#42474f",
+              "on-secondary-container": "#b1b5bf",
+              "inverse-on-surface": "#2d3137",
+              "primary": "#a2c9ff"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body { background-color: #10141a; color: #dfe2eb; font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24; }
+        .glass-card { background: rgba(88, 166, 255, 0.08); backdrop-filter: blur(20px); }
+        .glow-line { filter: drop-shadow(0 0 8px rgba(162, 201, 255, 0.4)); }
+    </style>
+</head>
+<body class="bg-background selection:bg-primary/30">
+<!-- Sidebar Navigation -->
+<aside class="h-full w-72 fixed left-0 top-0 overflow-y-auto bg-slate-950 dark:bg-slate-950 flex flex-col gap-8 p-8 h-screen border-r border-white/5 shadow-[24px_0_48px_rgba(0,0,0,0.4)] z-50">
+<div class="flex flex-col gap-1">
+<h1 class="text-2xl font-light tracking-[-0.02em] text-blue-200">Nefes</h1>
+<p class="text-xs text-slate-400 font-light tracking-widest uppercase">Derin bir nefes al</p>
+</div>
+<nav class="flex flex-col gap-2 flex-grow">
+<a class="flex items-center gap-4 p-4 text-slate-400 hover:text-blue-100 transition-colors duration-400 hover:bg-white/10 rounded-full group" href="#">
+<span class="material-symbols-outlined group-active:scale-95 duration-400">home</span>
+<span class="font-light tracking-tight">Ana Dashboard</span>
+</a>
+<a class="flex items-center gap-4 p-4 text-slate-400 hover:text-blue-100 transition-colors duration-400 hover:bg-white/10 rounded-full group" href="#">
+<span class="material-symbols-outlined group-active:scale-95 duration-400">self_improvement</span>
+<span class="font-light tracking-tight">Egzersiz</span>
+</a>
+<a class="flex items-center gap-4 p-4 text-slate-400 hover:text-blue-100 transition-colors duration-400 hover:bg-white/10 rounded-full group" href="#">
+<span class="material-symbols-outlined group-active:scale-95 duration-400">history</span>
+<span class="font-light tracking-tight">Geçmiş</span>
+</a>
+<a class="flex items-center gap-4 p-4 text-blue-200 bg-white/5 rounded-full font-medium group" href="#">
+<span class="material-symbols-outlined group-active:scale-95 duration-400" style="font-variation-settings: 'FILL' 1;">insights</span>
+<span class="font-light tracking-tight">İstatistikler</span>
+</a>
+<a class="flex items-center gap-4 p-4 text-slate-400 hover:text-blue-100 transition-colors duration-400 hover:bg-white/10 rounded-full group" href="#">
+<span class="material-symbols-outlined group-active:scale-95 duration-400">settings</span>
+<span class="font-light tracking-tight">Ayarlar</span>
+</a>
+</nav>
+<div class="mt-auto flex items-center gap-4 p-4 rounded-xl bg-surface-container-lowest">
+<div class="w-10 h-10 rounded-full overflow-hidden">
+<img alt="Kullanıcı" data-alt="Portrait of a calm young man with soft lighting, minimalist background, serene expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdlcF7YR22iAaNAgvTmou-Fz6V-BYK1VVBDMmcKePGTShHcU8Ok0W13O7SIy-stdL2Rqs1kVrVo7Uln45QlWhiguSZP2o2FloqPgIXmCidjkSeJKL3IAKeCcAAMV4P0gbm21qgMw4B8iH5bYN_nn8lchJ4ol41UL4spvkP2Lc-FJZ3QQNH8Q4oTx93KW5ofnXxooEh_q0AQFzBKJYFkBvSJ3zm4NXSm1g67YbMpOLLwMLrQrv0uDNzLH8Yi51qcGmAiBsxcTD5A20Y"/>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-medium text-on-surface">Caner Altun</span>
+<span class="text-[10px] text-slate-500 uppercase tracking-widest">Premium Üye</span>
+</div>
+</div>
+</aside>
+<!-- Main Canvas -->
+<main class="ml-72 min-h-screen p-12">
+<!-- Top App Bar -->
+<header class="w-full h-20 sticky top-0 z-40 flex justify-between items-center mb-8">
+<div class="flex flex-col">
+<h2 class="text-sm uppercase tracking-[0.2em] font-light text-blue-200">İstatistikler</h2>
+<p class="text-on-surface-variant text-xs mt-1">Gelişiminizi ve içsel huzurunuzu takip edin</p>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2 text-xs text-on-surface-variant tracking-widest uppercase">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                    Canlı Takip
+                </div>
+<button class="px-6 py-2 rounded-full border border-outline-variant/15 text-xs tracking-widest uppercase hover:bg-surface-container-high transition-all">Profil</button>
+</div>
+</header>
+<!-- Stats Overview Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+<!-- Total Sessions -->
+<div class="bg-surface-container-low p-8 rounded-xl flex flex-col gap-4 relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-8 text-primary/10 group-hover:text-primary/20 transition-colors">
+<span class="material-symbols-outlined text-6xl">calendar_today</span>
+</div>
+<span class="text-[10px] uppercase tracking-[0.15em] text-on-surface-variant">Toplam Seans</span>
+<div class="flex items-baseline gap-2">
+<span class="text-5xl font-light tracking-tight text-on-surface">24</span>
+<span class="text-primary text-xs font-medium">+3 bu hafta</span>
+</div>
+<div class="w-full h-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="w-[65%] h-full bg-primary shadow-[0_0_8px_rgba(162,201,255,0.5)]"></div>
+</div>
+</div>
+<!-- Total Duration -->
+<div class="bg-surface-container-low p-8 rounded-xl flex flex-col gap-4 relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-8 text-tertiary/10 group-hover:text-tertiary/20 transition-colors">
+<span class="material-symbols-outlined text-6xl">schedule</span>
+</div>
+<span class="text-[10px] uppercase tracking-[0.15em] text-on-surface-variant">Toplam Süre</span>
+<div class="flex items-baseline gap-2">
+<span class="text-5xl font-light tracking-tight text-on-surface">320</span>
+<span class="text-on-surface-variant text-sm font-light">dk</span>
+</div>
+<p class="text-xs text-on-surface-variant font-light mt-2">Geçen aya göre %12 artış</p>
+</div>
+<!-- Longest Streak -->
+<div class="bg-surface-container-low p-8 rounded-xl flex flex-col gap-4 relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-8 text-primary/10 group-hover:text-primary/20 transition-colors">
+<span class="material-symbols-outlined text-6xl">local_fire_department</span>
+</div>
+<span class="text-[10px] uppercase tracking-[0.15em] text-on-surface-variant">En Uzun Seri</span>
+<div class="flex items-baseline gap-2">
+<span class="text-5xl font-light tracking-tight text-on-surface">7</span>
+<span class="text-on-surface-variant text-sm font-light">gün</span>
+</div>
+<div class="flex gap-1 mt-2">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+</div>
+</div>
+</div>
+<!-- Middle Charts Section -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+<!-- Weekly Activity Bar Chart -->
+<div class="bg-surface-container-low p-10 rounded-xl">
+<div class="flex justify-between items-center mb-12">
+<h3 class="text-sm uppercase tracking-widest font-light">Haftalık Aktivite</h3>
+<span class="text-[10px] text-on-surface-variant uppercase tracking-widest">Dakika / Gün</span>
+</div>
+<div class="flex items-end justify-between h-48 gap-4 px-2">
+<!-- Bars -->
+<div class="flex flex-col items-center gap-4 flex-1 group">
+<div class="w-full bg-surface-container-highest rounded-t-full h-24 group-hover:bg-primary-container/20 transition-all duration-500"></div>
+<span class="text-[10px] text-on-surface-variant font-light uppercase">Pzt</span>
+</div>
+<div class="flex flex-col items-center gap-4 flex-1 group">
+<div class="w-full bg-surface-container-highest rounded-t-full h-32 group-hover:bg-primary-container/20 transition-all duration-500"></div>
+<span class="text-[10px] text-on-surface-variant font-light uppercase">Sal</span>
+</div>
+<div class="flex flex-col items-center gap-4 flex-1 group">
+<div class="w-full bg-primary rounded-t-full h-44 shadow-[0_0_15px_rgba(162,201,255,0.3)] transition-all duration-500"></div>
+<span class="text-[10px] text-primary font-medium uppercase">Çar</span>
+</div>
+<div class="flex flex-col items-center gap-4 flex-1 group">
+<div class="w-full bg-surface-container-highest rounded-t-full h-16 group-hover:bg-primary-container/20 transition-all duration-500"></div>
+<span class="text-[10px] text-on-surface-variant font-light uppercase">Per</span>
+</div>
+<div class="flex flex-col items-center gap-4 flex-1 group">
+<div class="w-full bg-surface-container-highest rounded-t-full h-28 group-hover:bg-primary-container/20 transition-all duration-500"></div>
+<span class="text-[10px] text-on-surface-variant font-light uppercase">Cum</span>
+</div>
+<div class="flex flex-col items-center gap-4 flex-1 group">
+<div class="w-full bg-surface-container-highest rounded-t-full h-36 group-hover:bg-primary-container/20 transition-all duration-500"></div>
+<span class="text-[10px] text-on-surface-variant font-light uppercase">Cmt</span>
+</div>
+<div class="flex flex-col items-center gap-4 flex-1 group">
+<div class="w-full bg-surface-container-highest rounded-t-full h-12 group-hover:bg-primary-container/20 transition-all duration-500"></div>
+<span class="text-[10px] text-on-surface-variant font-light uppercase">Paz</span>
+</div>
+</div>
+</div>
+<!-- Mood Trend Line Chart -->
+<div class="bg-surface-container-low p-10 rounded-xl relative overflow-hidden">
+<div class="flex justify-between items-center mb-12">
+<h3 class="text-sm uppercase tracking-widest font-light">Mod Eğilimi</h3>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="text-[10px] text-on-surface-variant uppercase">Pozitif</span>
+</div>
+</div>
+</div>
+<div class="relative h-48 w-full">
+<!-- SVG Line Graph -->
+<svg class="w-full h-full overflow-visible" preserveaspectratio="none" viewbox="0 0 400 100">
+<path class="glow-line opacity-80" d="M0,80 C50,75 100,20 150,30 C200,40 250,10 300,45 C350,80 400,60 450,65" fill="none" stroke="#ffb77c" stroke-width="1.5"></path>
+<circle class="glow-line" cx="150" cy="30" fill="#ffb77c" r="4"></circle>
+<!-- Area Under Curve -->
+<path class="opacity-20" d="M0,80 C50,75 100,20 150,30 C200,40 250,10 300,45 C350,80 400,60 450,65 V100 H0 Z" fill="url(#gradient-mood)"></path>
+<defs>
+<lineargradient id="gradient-mood" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#ffb77c"></stop>
+<stop offset="100%" stop-color="transparent"></stop>
+</lineargradient>
+</defs>
+</svg>
+<!-- Y-Axis Labels -->
+<div class="absolute -left-6 top-0 h-full flex flex-col justify-between text-[8px] text-on-surface-variant/40 uppercase tracking-tighter">
+<span>Sakin</span>
+<span>Dengeli</span>
+<span>Stresli</span>
+</div>
+</div>
+<div class="flex justify-between mt-6 text-[10px] text-on-surface-variant font-light uppercase px-2">
+<span>Hafta 1</span>
+<span>Hafta 2</span>
+<span>Hafta 3</span>
+<span>Hafta 4</span>
+</div>
+</div>
+</div>
+<!-- Bottom Section: Technique Distribution -->
+<div class="bg-surface-container-low p-10 rounded-xl">
+<div class="flex flex-col md:flex-row gap-12 items-center">
+<div class="flex-grow">
+<h3 class="text-sm uppercase tracking-widest font-light mb-2">Teknik Dağılımı</h3>
+<p class="text-on-surface-variant text-xs mb-8 font-light max-w-md">Hangi nefes egzersizlerinin sizi daha çok rahatlattığını analiz edin. 4-7-8 tekniği bu ay odak noktanız olmuş.</p>
+<div class="space-y-6">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-3 h-3 rounded-full bg-primary"></div>
+<span class="text-xs font-light text-on-surface">4-7-8 Rahatlama</span>
+</div>
+<span class="text-xs font-medium text-on-surface">%45</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-3 h-3 rounded-full bg-tertiary"></div>
+<span class="text-xs font-light text-on-surface">Kutu Nefesi</span>
+</div>
+<span class="text-xs font-medium text-on-surface">%30</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-3 h-3 rounded-full bg-blue-400"></div>
+<span class="text-xs font-light text-on-surface">Odak Artırıcı</span>
+</div>
+<span class="text-xs font-medium text-on-surface">%25</span>
+</div>
+</div>
+</div>
+<div class="relative w-64 h-64 flex items-center justify-center">
+<!-- Donut Chart Simulated with SVG -->
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 100 100">
+<!-- Background Circle -->
+<circle cx="50" cy="50" fill="transparent" r="40" stroke="#1c2026" stroke-width="12"></circle>
+<!-- Segment 1: 45% (4-7-8) -->
+<circle class="transition-all duration-1000" cx="50" cy="50" fill="transparent" r="40" stroke="#a2c9ff" stroke-dasharray="113.1 251.3" stroke-width="12"></circle>
+<!-- Segment 2: 30% (Kutu) - offset is previous 45% -->
+<circle class="transition-all duration-1000" cx="50" cy="50" fill="transparent" r="40" stroke="#ffb77c" stroke-dasharray="75.4 251.3" stroke-dashoffset="-113.1" stroke-width="12"></circle>
+<!-- Segment 3: 25% (Odak) - offset is 45+30=75% -->
+<circle class="transition-all duration-1000" cx="50" cy="50" fill="transparent" r="40" stroke="#58a6ff" stroke-dasharray="62.8 251.3" stroke-dashoffset="-188.5" stroke-width="12"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="text-2xl font-light tracking-tight">24</span>
+<span class="text-[8px] uppercase tracking-widest text-on-surface-variant">Seans</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Featured Section: Insight Card -->
+<div class="mt-8 bg-surface-container-highest p-1 bg-[url('https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?auto=format&amp;fit=crop&amp;q=80&amp;w=2000')] bg-cover bg-center rounded-xl overflow-hidden" data-alt="Abstract ethereal night sky with distant glowing stars and deep indigo nebulae, cinematic atmosphere">
+<div class="w-full h-full glass-card p-12 rounded-[calc(1rem-4px)] flex flex-col md:flex-row items-center gap-12">
+<div class="flex-1">
+<span class="px-3 py-1 bg-primary/20 text-primary text-[8px] uppercase tracking-widest rounded-full mb-6 inline-block">Yapay Zeka Öngörüsü</span>
+<h2 class="text-3xl font-light leading-snug mb-4">Akşam seanslarınızda daha derin bir sakinliğe ulaşıyorsunuz.</h2>
+<p class="text-on-surface-variant text-sm font-light leading-relaxed max-w-lg mb-8">Verileriniz, saat 21:00'den sonra yapılan 4-7-8 seanslarının kalp atış hızınızı %15 daha efektif düşürdüğünü gösteriyor.</p>
+<button class="bg-primary text-on-primary-fixed px-8 py-3 rounded-full text-xs font-semibold uppercase tracking-widest hover:scale-105 transition-transform">Akşam Rutini Oluştur</button>
+</div>
+<div class="w-48 h-48 rounded-full border border-primary/20 flex items-center justify-center relative">
+<div class="w-32 h-32 rounded-full bg-primary/10 animate-pulse absolute"></div>
+<span class="material-symbols-outlined text-primary text-5xl">auto_awesome</span>
+</div>
+</div>
+</div>
+</main>
+</body></html>

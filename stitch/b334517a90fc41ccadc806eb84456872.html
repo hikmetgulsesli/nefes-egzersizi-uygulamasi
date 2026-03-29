@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "outline-variant": "#414752",
+              "surface": "#10141a",
+              "on-primary-fixed-variant": "#004882",
+              "on-background": "#dfe2eb",
+              "background": "#10141a",
+              "on-surface": "#dfe2eb",
+              "surface-container-lowest": "#0a0e14",
+              "inverse-surface": "#dfe2eb",
+              "surface-container-highest": "#31353c",
+              "on-secondary": "#2c3138",
+              "secondary-fixed": "#dee2ec",
+              "on-tertiary-container": "#5a2e00",
+              "surface-container": "#1c2026",
+              "error-container": "#93000a",
+              "on-secondary-fixed-variant": "#42474f",
+              "on-error-container": "#ffdad6",
+              "on-primary": "#00315c",
+              "surface-variant": "#31353c",
+              "tertiary": "#ffb77c",
+              "surface-bright": "#353940",
+              "inverse-on-surface": "#2d3137",
+              "on-secondary-container": "#b1b5bf",
+              "tertiary-fixed-dim": "#ffb77c",
+              "outline": "#8b919d",
+              "on-error": "#690005",
+              "primary-fixed-dim": "#a2c9ff",
+              "tertiary-fixed": "#ffdcc2",
+              "secondary": "#c2c7d0",
+              "on-tertiary": "#4d2700",
+              "surface-container-low": "#181c22",
+              "on-tertiary-fixed": "#2e1500",
+              "secondary-container": "#42474f",
+              "on-primary-container": "#003a6b",
+              "on-primary-fixed": "#001c38",
+              "on-tertiary-fixed-variant": "#6d3900",
+              "primary-fixed": "#d3e4ff",
+              "on-secondary-fixed": "#171c23",
+              "surface-tint": "#a2c9ff",
+              "surface-container-high": "#262a31",
+              "primary-container": "#58a6ff",
+              "secondary-fixed-dim": "#c2c7d0",
+              "surface-dim": "#10141a",
+              "inverse-primary": "#0060aa",
+              "primary": "#a2c9ff",
+              "error": "#ffb4ab",
+              "on-surface-variant": "#c0c7d4",
+              "tertiary-container": "#e48f43"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+            font-size: 24px;
+        }
+        body {
+            background-color: #10141a;
+            color: #dfe2eb;
+            font-family: 'Inter', sans-serif;
+        }
+        .chart-bar {
+            transition: height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    </style>
+</head>
+<body class="antialiased">
+<!-- SideNavBar -->
+<aside class="h-full w-72 fixed left-0 top-0 overflow-y-auto bg-slate-950 dark:bg-slate-950 bg-slate-900/40 backdrop-blur-xl shadow-[24px_0_48px_rgba(0,0,0,0.4)] flex flex-col gap-8 p-8 h-screen border-r border-white/5 z-50">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-primary-container flex items-center justify-center shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-on-primary" style="font-variation-settings: 'FILL' 1;">spa</span>
+</div>
+<div>
+<h1 class="text-2xl font-light tracking-[-0.02em] text-blue-200 uppercase">Nefes</h1>
+<p class="text-xs text-slate-400 font-light tracking-wider uppercase">Derin bir nefes al</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2 mt-4">
+<a class="flex items-center gap-4 px-6 py-4 text-slate-400 hover:text-blue-100 transition-all duration-400 hover:bg-white/10 rounded-full group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">home</span>
+<span class="font-light tracking-tight">Ana Dashboard</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-4 text-slate-400 hover:text-blue-100 transition-all duration-400 hover:bg-white/10 rounded-full group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">self_improvement</span>
+<span class="font-light tracking-tight">Egzersiz</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-4 text-slate-400 hover:text-blue-100 transition-all duration-400 hover:bg-white/10 rounded-full group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">history</span>
+<span class="font-light tracking-tight">Geçmiş</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-4 text-blue-200 bg-white/5 rounded-full font-medium transition-all duration-400 group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform" style="font-variation-settings: 'FILL' 1;">insights</span>
+<span class="font-light tracking-tight">İstatistikler</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-4 text-slate-400 hover:text-blue-100 transition-all duration-400 hover:bg-white/10 rounded-full group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">settings</span>
+<span class="font-light tracking-tight">Ayarlar</span>
+</a>
+</nav>
+<div class="mt-auto p-6 rounded-xl bg-white/5 border border-white/5 flex flex-col gap-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-highest ring-2 ring-primary/20">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="close-up portrait of a serene woman with soft lighting and minimalist aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5dp1L8zNwd3HUzK8yxYEZMJA4Kgx-trnxlFEF7CeC8GSeLG-Hfxw_BUneV_Zg58xM2Jlb30ud6zXWBkHShxHUIhiAO1mf5MrJQbo33SK67t9Tf14jlNhWCUXr-a3FXiFyq1GPl3l6giYJuEzeAkvC5Js7XxgG-zjpl5l2_aeZkT568B08MdFmo-VWfG1S1I4hl1yhbK5lyBEIRhiwq6OtfBXkehAozTa5RiE3B797eyhZ8sEwLQFy0J6FCNMqeTa4AwZMQtftMk-2"/>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-medium text-on-surface">Selinn</span>
+<span class="text-[10px] text-slate-500 uppercase tracking-widest">Premium Üye</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-72 min-h-screen">
+<!-- TopAppBar -->
+<header class="w-full h-20 sticky top-0 z-40 flex justify-between items-center px-12 bg-transparent backdrop-blur-md">
+<div class="flex flex-col">
+<span class="text-xs uppercase tracking-[0.2em] font-light text-slate-500 mb-1">Analiz</span>
+<h2 class="text-xl font-light text-blue-200 tracking-tight">İstatistikler</h2>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-slate-400 hover:text-blue-100 transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="h-4 w-px bg-white/10"></div>
+<div class="flex items-center gap-3 cursor-pointer group">
+<span class="text-sm font-light text-slate-300 group-hover:text-blue-200 transition-colors uppercase tracking-widest">Profil</span>
+<span class="material-symbols-outlined text-slate-400 group-hover:text-blue-200">account_circle</span>
+</div>
+</div>
+</header>
+<!-- Content Canvas -->
+<div class="p-12 space-y-12">
+<!-- Key Metrics Row -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Total Sessions -->
+<div class="bg-surface-container-low p-8 rounded-xl flex flex-col gap-4 relative overflow-hidden group hover:bg-surface-container transition-colors duration-400">
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-primary/5 rounded-full blur-2xl group-hover:bg-primary/10 transition-colors"></div>
+<span class="text-[10px] text-slate-500 uppercase tracking-[0.2em]">Toplam Seanslar</span>
+<div class="flex items-baseline gap-2">
+<span class="text-5xl font-extralight text-primary tracking-tighter">24</span>
+<span class="text-sm text-slate-500 font-light">Tamamlanan</span>
+</div>
+<div class="flex items-center gap-2 text-xs text-primary/60">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+<span>Geçen haftaya göre %12 artış</span>
+</div>
+</div>
+<!-- Total Minutes -->
+<div class="bg-surface-container-low p-8 rounded-xl flex flex-col gap-4 relative overflow-hidden group hover:bg-surface-container transition-colors duration-400">
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-tertiary/5 rounded-full blur-2xl group-hover:bg-tertiary/10 transition-colors"></div>
+<span class="text-[10px] text-slate-500 uppercase tracking-[0.2em]">Toplam Süre</span>
+<div class="flex items-baseline gap-2">
+<span class="text-5xl font-extralight text-tertiary tracking-tighter">320</span>
+<span class="text-sm text-slate-500 font-light">Dakika</span>
+</div>
+<div class="flex items-center gap-2 text-xs text-tertiary/60">
+<span class="material-symbols-outlined text-sm">schedule</span>
+<span>Ortalama seans 13 dk</span>
+</div>
+</div>
+<!-- Longest Streak -->
+<div class="bg-surface-container-low p-8 rounded-xl flex flex-col gap-4 relative overflow-hidden group hover:bg-surface-container transition-colors duration-400">
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-white/5 rounded-full blur-2xl group-hover:bg-white/10 transition-colors"></div>
+<span class="text-[10px] text-slate-500 uppercase tracking-[0.2em]">En Uzun Seri</span>
+<div class="flex items-baseline gap-2">
+<span class="text-5xl font-extralight text-on-surface tracking-tighter">7</span>
+<span class="text-sm text-slate-500 font-light">Gün</span>
+</div>
+<div class="flex items-center gap-2 text-xs text-on-surface/40">
+<span class="material-symbols-outlined text-sm">local_fire_department</span>
+<span style="font-variation-settings: 'FILL' 1;">Şu anki serin: 3 gün</span>
+</div>
+</div>
+</section>
+<!-- Main Charts Grid -->
+<section class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<!-- Weekly Activity Bar Chart -->
+<div class="bg-surface-container-low p-8 rounded-xl space-y-8">
+<div class="flex justify-between items-end">
+<div class="space-y-1">
+<h3 class="text-lg font-light tracking-tight text-blue-100">Haftalık Aktivite</h3>
+<p class="text-xs text-slate-500">Günlük tamamlanan nefes egzersizleri</p>
+</div>
+<div class="flex items-center gap-2 text-[10px] uppercase tracking-widest text-slate-500">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+                            Seanslar
+                        </div>
+</div>
+<div class="h-64 flex items-end justify-between gap-4 px-2">
+<!-- Monday -->
+<div class="flex-1 flex flex-col items-center gap-4 group">
+<div class="w-full bg-surface-container-highest rounded-full h-32 relative overflow-hidden">
+<div class="absolute bottom-0 w-full bg-primary/20 h-full"></div>
+<div class="absolute bottom-0 w-full bg-primary h-[40%] rounded-full chart-bar group-hover:brightness-110"></div>
+</div>
+<span class="text-[10px] uppercase tracking-tighter text-slate-500">Pzt</span>
+</div>
+<!-- Tuesday -->
+<div class="flex-1 flex flex-col items-center gap-4 group">
+<div class="w-full bg-surface-container-highest rounded-full h-32 relative overflow-hidden">
+<div class="absolute bottom-0 w-full bg-primary/20 h-full"></div>
+<div class="absolute bottom-0 w-full bg-primary h-[70%] rounded-full chart-bar group-hover:brightness-110"></div>
+</div>
+<span class="text-[10px] uppercase tracking-tighter text-slate-500">Sal</span>
+</div>
+<!-- Wednesday -->
+<div class="flex-1 flex flex-col items-center gap-4 group">
+<div class="w-full bg-surface-container-highest rounded-full h-32 relative overflow-hidden">
+<div class="absolute bottom-0 w-full bg-primary/20 h-full"></div>
+<div class="absolute bottom-0 w-full bg-primary h-[55%] rounded-full chart-bar group-hover:brightness-110"></div>
+</div>
+<span class="text-[10px] uppercase tracking-tighter text-slate-500">Çar</span>
+</div>
+<!-- Thursday -->
+<div class="flex-1 flex flex-col items-center gap-4 group">
+<div class="w-full bg-surface-container-highest rounded-full h-32 relative overflow-hidden">
+<div class="absolute bottom-0 w-full bg-primary/20 h-full"></div>
+<div class="absolute bottom-0 w-full bg-primary h-[90%] rounded-full chart-bar group-hover:brightness-110 shadow-[0_0_20px_rgba(162,201,255,0.3)]"></div>
+</div>
+<span class="text-[10px] uppercase tracking-tighter text-slate-500">Per</span>
+</div>
+<!-- Friday -->
+<div class="flex-1 flex flex-col items-center gap-4 group">
+<div class="w-full bg-surface-container-highest rounded-full h-32 relative overflow-hidden">
+<div class="absolute bottom-0 w-full bg-primary/20 h-full"></div>
+<div class="absolute bottom-0 w-full bg-primary h-[30%] rounded-full chart-bar group-hover:brightness-110"></div>
+</div>
+<span class="text-[10px] uppercase tracking-tighter text-slate-500">Cum</span>
+</div>
+<!-- Saturday -->
+<div class="flex-1 flex flex-col items-center gap-4 group">
+<div class="w-full bg-surface-container-highest rounded-full h-32 relative overflow-hidden">
+<div class="absolute bottom-0 w-full bg-primary/20 h-full"></div>
+<div class="absolute bottom-0 w-full bg-primary h-[65%] rounded-full chart-bar group-hover:brightness-110"></div>
+</div>
+<span class="text-[10px] uppercase tracking-tighter text-slate-500">Cmt</span>
+</div>
+<!-- Sunday -->
+<div class="flex-1 flex flex-col items-center gap-4 group">
+<div class="w-full bg-surface-container-highest rounded-full h-32 relative overflow-hidden">
+<div class="absolute bottom-0 w-full bg-primary/20 h-full"></div>
+<div class="absolute bottom-0 w-full bg-primary h-[15%] rounded-full chart-bar group-hover:brightness-110"></div>
+</div>
+<span class="text-[10px] uppercase tracking-tighter text-slate-500">Paz</span>
+</div>
+</div>
+</div>
+<!-- Mood Trend Line Chart -->
+<div class="bg-surface-container-low p-8 rounded-xl space-y-8 overflow-hidden relative">
+<div class="space-y-1">
+<h3 class="text-lg font-light tracking-tight text-blue-100">Mod Eğilimi</h3>
+<p class="text-xs text-slate-500">Haftalık ortalama duygu durumunuz</p>
+</div>
+<div class="h-64 relative flex items-center justify-center">
+<!-- SVG Line Chart Mockup -->
+<svg class="w-full h-full" viewbox="0 0 400 200">
+<!-- Background Grid -->
+<line stroke="rgba(255,255,255,0.03)" stroke-width="1" x1="0" x2="400" y1="50" y2="50"></line>
+<line stroke="rgba(255,255,255,0.03)" stroke-width="1" x1="0" x2="400" y1="100" y2="100"></line>
+<line stroke="rgba(255,255,255,0.03)" stroke-width="1" x1="0" x2="400" y1="150" y2="150"></line>
+<!-- Area Glow -->
+<path d="M0 150 Q 50 140, 100 110 T 200 80 T 300 120 T 400 40 V 200 H 0 Z" fill="url(#gradient-glow)" opacity="0.1"></path>
+<!-- The Line -->
+<path d="M0 150 Q 50 140, 100 110 T 200 80 T 300 120 T 400 40" fill="none" stroke="#ffb77c" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" style="filter: drop-shadow(0 0 8px rgba(255,183,124,0.4))"></path>
+<!-- Data Points -->
+<circle cx="100" cy="110" fill="#ffb77c" r="4"></circle>
+<circle cx="200" cy="80" fill="#ffb77c" r="4"></circle>
+<circle cx="300" cy="120" fill="#ffb77c" r="4"></circle>
+<circle cx="400" cy="40" fill="#ffb77c" r="6" style="filter: drop-shadow(0 0 12px rgba(255,183,124,0.6))"></circle>
+<defs>
+<lineargradient id="gradient-glow" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#ffb77c"></stop>
+<stop offset="100%" stop-color="transparent"></stop>
+</lineargradient>
+</defs>
+</svg>
+<!-- Floating Mood Badge -->
+<div class="absolute top-4 right-4 bg-tertiary-container/20 backdrop-blur-xl border border-tertiary/20 px-4 py-2 rounded-full flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-sm" style="font-variation-settings: 'FILL' 1;">sentiment_very_satisfied</span>
+<span class="text-xs text-tertiary font-medium">Huzurlu</span>
+</div>
+</div>
+<div class="flex justify-between text-[10px] text-slate-500 uppercase tracking-widest px-2">
+<span>Hafta 1</span>
+<span>Hafta 2</span>
+<span>Hafta 3</span>
+<span>Hafta 4</span>
+</div>
+</div>
+<!-- Technique Distribution Donut Chart -->
+<div class="bg-surface-container-low p-8 rounded-xl space-y-8 lg:col-span-2">
+<div class="flex justify-between items-start">
+<div class="space-y-1">
+<h3 class="text-lg font-light tracking-tight text-blue-100">Teknik Dağılımı</h3>
+<p class="text-xs text-slate-500">En çok tercih ettiğiniz egzersiz yöntemleri</p>
+</div>
+<button class="px-4 py-2 bg-white/5 border border-white/5 rounded-full text-[10px] text-slate-400 uppercase tracking-widest hover:bg-white/10 transition-colors">Detaylı Rapor</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<div class="relative flex justify-center py-8">
+<!-- Circular SVG -->
+<svg class="w-64 h-64 -rotate-90">
+<!-- Box Breathing -->
+<circle class="text-primary" cx="128" cy="128" fill="transparent" r="110" stroke="currentColor" stroke-dasharray="690" stroke-dashoffset="345" stroke-linecap="round" stroke-width="20"></circle>
+<!-- 4-7-8 -->
+<circle class="text-tertiary" cx="128" cy="128" fill="transparent" r="110" stroke="currentColor" stroke-dasharray="690" stroke-dashoffset="552" stroke-linecap="round" stroke-width="20" transform="rotate(180, 128, 128)"></circle>
+<!-- Focused -->
+<circle class="text-on-surface-variant/30" cx="128" cy="128" fill="transparent" r="110" stroke="currentColor" stroke-dasharray="690" stroke-dashoffset="621" stroke-linecap="round" stroke-width="20" transform="rotate(250, 128, 128)"></circle>
+</svg>
+<!-- Center Label -->
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="text-4xl font-extralight text-on-surface">12</span>
+<span class="text-[10px] text-slate-500 uppercase tracking-widest">Saat</span>
+</div>
+</div>
+<div class="space-y-6">
+<!-- Technique Item 1 -->
+<div class="flex items-center justify-between p-4 rounded-xl hover:bg-white/5 transition-all duration-400 group cursor-default">
+<div class="flex items-center gap-4">
+<div class="w-1.5 h-10 rounded-full bg-primary shadow-[0_0_12px_rgba(162,201,255,0.4)]"></div>
+<div>
+<p class="text-sm font-medium text-blue-100">Kutu Nefesi</p>
+<p class="text-xs text-slate-500">Denge ve Odak</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-sm font-light text-primary group-hover:scale-110 transition-transform">%50</p>
+<p class="text-[10px] text-slate-500 uppercase tracking-tighter">160 DK</p>
+</div>
+</div>
+<!-- Technique Item 2 -->
+<div class="flex items-center justify-between p-4 rounded-xl hover:bg-white/5 transition-all duration-400 group cursor-default">
+<div class="flex items-center gap-4">
+<div class="w-1.5 h-10 rounded-full bg-tertiary shadow-[0_0_12px_rgba(255,183,124,0.4)]"></div>
+<div>
+<p class="text-sm font-medium text-blue-100">4-7-8 Tekniği</p>
+<p class="text-xs text-slate-500">Derin Gevşeme</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-sm font-light text-tertiary group-hover:scale-110 transition-transform">%30</p>
+<p class="text-[10px] text-slate-500 uppercase tracking-tighter">96 DK</p>
+</div>
+</div>
+<!-- Technique Item 3 -->
+<div class="flex items-center justify-between p-4 rounded-xl hover:bg-white/5 transition-all duration-400 group cursor-default">
+<div class="flex items-center gap-4">
+<div class="w-1.5 h-10 rounded-full bg-on-surface-variant/30"></div>
+<div>
+<p class="text-sm font-medium text-blue-100">Odaklanmış Nefes</p>
+<p class="text-xs text-slate-500">Zihinsel Netlik</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-sm font-light text-slate-400 group-hover:scale-110 transition-transform">%20</p>
+<p class="text-[10px] text-slate-500 uppercase tracking-tighter">64 DK</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Background Atmospheric Glows -->
+<div class="fixed -bottom-40 -left-40 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px] pointer-events-none -z-10"></div>
+<div class="fixed top-20 -right-40 w-[500px] h-[500px] bg-tertiary/5 rounded-full blur-[100px] pointer-events-none -z-10"></div>
+</body></html>

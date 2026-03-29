@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+            font-size: 20px;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #10141a;
+            color: #dfe2eb;
+            -webkit-font-smoothing: antialiased;
+        }
+        .glass-card {
+            background: rgba(49, 53, 60, 0.12);
+            backdrop-filter: blur(20px);
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 16px;
+            width: 16px;
+            border-radius: 50%;
+            background: #a2c9ff;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(162, 201, 255, 0.4);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "outline-variant": "#414752",
+                        "surface": "#10141a",
+                        "on-primary-fixed-variant": "#004882",
+                        "on-background": "#dfe2eb",
+                        "background": "#10141a",
+                        "on-surface": "#dfe2eb",
+                        "surface-container-lowest": "#0a0e14",
+                        "inverse-surface": "#dfe2eb",
+                        "surface-container-highest": "#31353c",
+                        "on-secondary": "#2c3138",
+                        "secondary-fixed": "#dee2ec",
+                        "on-tertiary-container": "#5a2e00",
+                        "surface-container": "#1c2026",
+                        "error-container": "#93000a",
+                        "on-secondary-fixed-variant": "#42474f",
+                        "on-error-container": "#ffdad6",
+                        "on-primary": "#00315c",
+                        "surface-variant": "#31353c",
+                        "tertiary": "#ffb77c",
+                        "surface-bright": "#353940",
+                        "inverse-on-surface": "#2d3137",
+                        "on-secondary-container": "#b1b5bf",
+                        "tertiary-fixed-dim": "#ffb77c",
+                        "outline": "#8b919d",
+                        "on-error": "#690005",
+                        "primary-fixed-dim": "#a2c9ff",
+                        "tertiary-fixed": "#ffdcc2",
+                        "secondary": "#c2c7d0",
+                        "on-tertiary": "#4d2700",
+                        "surface-container-low": "#181c22",
+                        "on-tertiary-fixed": "#2e1500",
+                        "secondary-container": "#42474f",
+                        "on-primary-container": "#003a6b",
+                        "on-primary-fixed": "#001c38",
+                        "on-tertiary-fixed-variant": "#6d3900",
+                        "primary-fixed": "#d3e4ff",
+                        "on-secondary-fixed": "#171c23",
+                        "surface-tint": "#a2c9ff",
+                        "surface-container-high": "#262a31",
+                        "primary-container": "#58a6ff",
+                        "secondary-fixed-dim": "#c2c7d0",
+                        "surface-dim": "#10141a",
+                        "inverse-primary": "#0060aa",
+                        "primary": "#a2c9ff",
+                        "error": "#ffb4ab",
+                        "on-surface-variant": "#c0c7d4",
+                        "tertiary-container": "#e48f43"
+                    },
+                    fontFamily: {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- SideNavBar Anchor -->
+<aside class="h-full w-72 fixed left-0 top-0 overflow-y-auto bg-slate-950 dark:bg-slate-950 flex flex-col gap-8 p-8 h-screen border-r border-white/5 font-['Inter'] antialiased tracking-tight z-50">
+<div class="flex flex-col gap-1">
+<h1 class="text-2xl font-light tracking-[-0.02em] text-blue-200">Nefes</h1>
+<p class="text-xs text-slate-500 uppercase tracking-widest">Derin bir nefes al</p>
+</div>
+<nav class="flex flex-col gap-2 flex-1">
+<a class="flex items-center gap-4 p-4 text-slate-400 hover:text-blue-100 transition-colors duration-400 hover:bg-white/10 rounded-full transition-all duration-400 cubic-bezier(0.4,0,0.2,1) active:scale-95" href="#">
+<span class="material-symbols-outlined">home</span>
+<span>Ana Dashboard</span>
+</a>
+<a class="flex items-center gap-4 p-4 text-slate-400 hover:text-blue-100 transition-colors duration-400 hover:bg-white/10 rounded-full transition-all duration-400 cubic-bezier(0.4,0,0.2,1) active:scale-95" href="#">
+<span class="material-symbols-outlined">self_improvement</span>
+<span>Egzersiz</span>
+</a>
+<a class="flex items-center gap-4 p-4 text-slate-400 hover:text-blue-100 transition-colors duration-400 hover:bg-white/10 rounded-full transition-all duration-400 cubic-bezier(0.4,0,0.2,1) active:scale-95" href="#">
+<span class="material-symbols-outlined">history</span>
+<span>Geçmiş</span>
+</a>
+<a class="flex items-center gap-4 p-4 text-slate-400 hover:text-blue-100 transition-colors duration-400 hover:bg-white/10 rounded-full transition-all duration-400 cubic-bezier(0.4,0,0.2,1) active:scale-95" href="#">
+<span class="material-symbols-outlined">insights</span>
+<span>İstatistikler</span>
+</a>
+<!-- Active Tab: Ayarlar -->
+<a class="flex items-center gap-4 p-4 text-blue-200 bg-white/5 rounded-full font-medium transition-all duration-400 cubic-bezier(0.4,0,0.2,1) active:scale-95" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">settings</span>
+<span>Ayarlar</span>
+</a>
+</nav>
+<div class="mt-auto flex items-center gap-4 p-2 bg-white/5 rounded-2xl">
+<img alt="User Profile" class="w-10 h-10 rounded-full bg-surface-container-high" data-alt="Minimalist avatar of a user with a soft gradient background in cool blue tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbAt9v5x-GVmF7CIDbmStXcJhVzSy7Twils9v1sCM-U89ruoAcAOpSfxhMGh9pS78jRAKOOR18emTnxEGkbI55ujCGnIqlfE_jDSrycfl3AFWFtu0QhTP9bILO4C7m5Pd3GnoyBXpcxBFiuBpDIgOey8fWkVnH4ICZEXpCBtDDixL0fnfSJfs8OwCuxrTF2aXS12mqO2Zv3XfD1pXT30so0kEimtIitHpCKcQf8ywdHeTENk8--p6elm-gY83YGsVI00e0P719Te62"/>
+<div class="flex flex-col">
+<span class="text-sm font-medium text-blue-100">Selim</span>
+<span class="text-xs text-slate-500">Premium Üye</span>
+</div>
+</div>
+</aside>
+<!-- TopAppBar Anchor -->
+<header class="w-full h-20 sticky top-0 z-40 bg-transparent flex justify-between items-center px-12 ml-72 w-[calc(100%-18rem)] font-['Inter'] text-sm uppercase tracking-widest font-light">
+<div class="flex items-center gap-4">
+<span class="text-blue-200 font-semibold">Ayarlar</span>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-slate-400 hover:text-blue-100 transition-opacity duration-400">Yardım</button>
+<div class="flex items-center gap-2 text-blue-200">
+<span>Selim</span>
+<img alt="Kullanıcı Profili" class="w-8 h-8 rounded-full border border-blue-200/20" data-alt="Profile circle showing the initial S with a soft atmospheric blue background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7TP8hAnZD-XY0nQO1H3iU2Hfvf-fUb0Ui-olXwWzmKz33YQGWVXXP4vC7uxXpfB3o3CUW7RRWD4lX_sG71BMFgtmjKtci6gy4HS8DHHmpfi23PNCoZbA41F0eG5Ud-9OF9AGQjGZkKSi-a3m_b6v4kEDT8w1Q_Bzo0YbnZszUKpZPChTQZQeh4FUpocgBSdUGMQvDgX5iFv--PylxltlLxBW2SSOv2aSsPbr-a7Xze74HogE45sRO0mu5aoWQ_ksyQzMUvcKbg73O"/>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="ml-72 p-12 max-w-5xl mx-auto space-y-12">
+<!-- Header Section -->
+<section class="mb-16">
+<h2 class="text-5xl font-extralight tracking-tight text-on-surface mb-2">Tercihler</h2>
+<p class="text-on-surface-variant text-lg">Deneyiminizi kişiselleştirin ve odağınızı koruyun.</p>
+</section>
+<!-- Settings Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Section 1: Profil (Bento Style Card) -->
+<div class="bg-surface-container-low p-10 rounded-xl space-y-8 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-primary">person</span>
+<h3 class="text-sm font-semibold uppercase tracking-[0.1em] text-on-surface-variant">Profil</h3>
+</div>
+<div class="space-y-4">
+<label class="block text-xs text-outline mb-1 ml-1">Kullanıcı Adı</label>
+<input class="w-full bg-surface-container-lowest border-none rounded-xl p-4 text-on-surface focus:ring-1 focus:ring-primary/30 transition-all placeholder-on-surface-variant/30" type="text" value="Selim"/>
+</div>
+</div>
+<div class="pt-4">
+<p class="text-xs text-on-surface-variant/60 leading-relaxed">Profil bilgileriniz sadece bu cihazda saklanır ve senkronize edilmez.</p>
+</div>
+</div>
+<!-- Section 2: Görünüm -->
+<div class="bg-surface-container-low p-10 rounded-xl space-y-8">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-tertiary">palette</span>
+<h3 class="text-sm font-semibold uppercase tracking-[0.1em] text-on-surface-variant">Görünüm</h3>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface-container-highest/30 rounded-2xl">
+<div class="flex flex-col">
+<span class="text-on-surface font-medium">Koyu Mod</span>
+<span class="text-xs text-on-surface-variant">Göz yorgunluğunu azaltın</span>
+</div>
+<button class="w-14 h-8 bg-primary rounded-full relative flex items-center px-1 transition-all">
+<div class="w-6 h-6 bg-on-primary rounded-full shadow-sm translate-x-6"></div>
+</button>
+</div>
+<div class="flex items-center justify-between p-4 rounded-2xl opacity-50">
+<div class="flex flex-col">
+<span class="text-on-surface font-medium">Animasyonları Azalt</span>
+<span class="text-xs text-on-surface-variant">Daha sade bir deneyim</span>
+</div>
+<button class="w-14 h-8 bg-surface-container-highest rounded-full relative flex items-center px-1">
+<div class="w-6 h-6 bg-on-surface-variant rounded-full shadow-sm"></div>
+</button>
+</div>
+</div>
+<!-- Section 3: Sesler (Wide Card) -->
+<div class="md:col-span-2 bg-surface-container-low p-10 rounded-xl space-y-8">
+<div class="flex items-center gap-3 mb-2">
+<span class="material-symbols-outlined text-primary">volume_up</span>
+<h3 class="text-sm font-semibold uppercase tracking-[0.1em] text-on-surface-variant">Sesler</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<div class="space-y-6">
+<div class="flex items-center justify-between">
+<span class="text-on-surface font-medium">Uygulama Sesleri</span>
+<button class="w-14 h-8 bg-primary rounded-full relative flex items-center px-1">
+<div class="w-6 h-6 bg-on-primary rounded-full shadow-sm translate-x-6"></div>
+</button>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-on-surface font-medium">Arka Plan Müziği</span>
+<button class="w-14 h-8 bg-surface-container-highest rounded-full relative flex items-center px-1">
+<div class="w-6 h-6 bg-on-surface-variant rounded-full shadow-sm"></div>
+</button>
+</div>
+</div>
+<div class="space-y-6">
+<div class="flex flex-col gap-4">
+<div class="flex justify-between text-xs text-on-surface-variant">
+<span>Ses Seviyesi</span>
+<span>%75</span>
+</div>
+<input class="w-full h-1 bg-surface-container-highest rounded-lg appearance-none cursor-pointer" max="100" min="0" type="range" value="75"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 4: Hatırlatıcı -->
+<div class="bg-surface-container-low p-10 rounded-xl space-y-8">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-tertiary">notifications_active</span>
+<h3 class="text-sm font-semibold uppercase tracking-[0.1em] text-on-surface-variant">Hatırlatıcı</h3>
+</div>
+<div class="space-y-6">
+<div class="flex items-center justify-between">
+<span class="text-on-surface font-medium">Günlük Hatırlatma</span>
+<button class="w-14 h-8 bg-primary rounded-full relative flex items-center px-1">
+<div class="w-6 h-6 bg-on-primary rounded-full shadow-sm translate-x-6"></div>
+</button>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface-container-lowest rounded-2xl">
+<span class="text-on-surface-variant">Zamanlama</span>
+<div class="flex items-center gap-2 bg-surface-container-high px-4 py-2 rounded-xl text-primary font-medium">
+<span>22:00</span>
+<span class="material-symbols-outlined text-sm">schedule</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 5: Veri Yönetimi -->
+<div class="bg-surface-container-low p-10 rounded-xl space-y-8 border border-error/5">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-error">database</span>
+<h3 class="text-sm font-semibold uppercase tracking-[0.1em] text-on-surface-variant">Veri Yönetimi</h3>
+</div>
+<div class="space-y-4">
+<button class="w-full py-4 px-6 rounded-full bg-surface-container-high text-on-surface text-sm font-medium hover:bg-surface-container-highest transition-colors flex items-center justify-between">
+<span>Verileri Dışa Aktar (JSON)</span>
+<span class="material-symbols-outlined text-sm">download</span>
+</button>
+<button class="w-full py-4 px-6 rounded-full border border-error/20 text-error text-sm font-medium hover:bg-error/5 transition-colors flex items-center justify-between">
+<span>Tüm Verileri Temizle</span>
+<span class="material-symbols-outlined text-sm">delete_forever</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Footer Info -->
+<footer class="mt-24 pt-12 border-t border-outline-variant/10 flex flex-col items-center gap-4">
+<div class="flex items-center gap-8 text-xs text-outline tracking-widest uppercase">
+<a class="hover:text-primary transition-colors" href="#">Gizlilik Politikası</a>
+<a class="hover:text-primary transition-colors" href="#">Kullanım Koşulları</a>
+<a class="hover:text-primary transition-colors" href="#">Hakkımızda</a>
+</div>
+<p class="text-[10px] text-outline/40">Versiyon 2.4.0 — Meditative Breath Ecosystem</p>
+</footer>
+</main>
+<!-- Background Atmospheric Glows -->
+<div class="fixed top-[-10%] right-[-10%] w-[500px] h-[500px] bg-primary/5 blur-[120px] rounded-full pointer-events-none z-[-1]"></div>
+<div class="fixed bottom-[-5%] left-[20%] w-[400px] h-[400px] bg-tertiary/5 blur-[100px] rounded-full pointer-events-none z-[-1]"></div>
+</body></html>

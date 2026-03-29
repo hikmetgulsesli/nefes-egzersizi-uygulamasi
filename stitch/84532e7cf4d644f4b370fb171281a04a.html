@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "outline-variant": "#414752",
+              "surface": "#10141a",
+              "on-primary-fixed-variant": "#004882",
+              "on-background": "#dfe2eb",
+              "background": "#10141a",
+              "on-surface": "#dfe2eb",
+              "surface-container-lowest": "#0a0e14",
+              "inverse-surface": "#dfe2eb",
+              "surface-container-highest": "#31353c",
+              "on-secondary": "#2c3138",
+              "secondary-fixed": "#dee2ec",
+              "on-tertiary-container": "#5a2e00",
+              "surface-container": "#1c2026",
+              "error-container": "#93000a",
+              "on-secondary-fixed-variant": "#42474f",
+              "on-error-container": "#ffdad6",
+              "on-primary": "#00315c",
+              "surface-variant": "#31353c",
+              "tertiary": "#ffb77c",
+              "surface-bright": "#353940",
+              "inverse-on-surface": "#2d3137",
+              "on-secondary-container": "#b1b5bf",
+              "tertiary-fixed-dim": "#ffb77c",
+              "outline": "#8b919d",
+              "on-error": "#690005",
+              "primary-fixed-dim": "#a2c9ff",
+              "tertiary-fixed": "#ffdcc2",
+              "secondary": "#c2c7d0",
+              "on-tertiary": "#4d2700",
+              "surface-container-low": "#181c22",
+              "on-tertiary-fixed": "#2e1500",
+              "secondary-container": "#42474f",
+              "on-primary-container": "#003a6b",
+              "on-primary-fixed": "#001c38",
+              "on-tertiary-fixed-variant": "#6d3900",
+              "primary-fixed": "#d3e4ff",
+              "on-secondary-fixed": "#171c23",
+              "surface-tint": "#a2c9ff",
+              "surface-container-high": "#262a31",
+              "primary-container": "#58a6ff",
+              "secondary-fixed-dim": "#c2c7d0",
+              "surface-dim": "#10141a",
+              "inverse-primary": "#0060aa",
+              "primary": "#a2c9ff",
+              "error": "#ffb4ab",
+              "on-surface-variant": "#c0c7d4",
+              "tertiary-container": "#e48f43"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+      }
+      .orb-glow {
+        box-shadow: 0 0 60px 10px rgba(162, 201, 255, 0.15);
+      }
+      body {
+        background-color: #10141a;
+      }
+    </style>
+</head>
+<body class="font-body text-on-surface selection:bg-primary/30">
+<!-- Screen Container -->
+<div class="relative min-h-screen flex items-center justify-center p-6 lg:p-12 overflow-hidden">
+<!-- Atmospheric Background Element -->
+<div class="absolute top-[-10%] right-[-10%] w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px]"></div>
+<div class="absolute bottom-[-5%] left-[-5%] w-[400px] h-[400px] bg-tertiary/5 rounded-full blur-[100px]"></div>
+<!-- Backdrop Overlay (Since it's a Modal Screen) -->
+<div class="fixed inset-0 bg-slate-950/60 backdrop-blur-sm z-0"></div>
+<!-- Modal Content Canvas -->
+<main class="relative z-10 w-full max-w-4xl bg-surface-container-low rounded-xl overflow-hidden shadow-[0_24px_48px_rgba(0,0,0,0.4)] flex flex-col md:flex-row">
+<!-- Visual Side (Decorative & Contextual) -->
+<div class="hidden md:flex md:w-2/5 relative overflow-hidden bg-surface-container-lowest p-12 flex-col justify-between">
+<div class="relative z-10">
+<span class="text-primary font-label text-xs tracking-widest uppercase mb-4 block">Teknik Rehberi</span>
+<h2 class="text-4xl font-headline font-light tracking-tight leading-tight text-on-surface">Zihnini <br/><span class="text-primary-fixed-dim">Serbest Bırak</span></h2>
+</div>
+<!-- Abstract Breathing Orb Graphic -->
+<div class="relative flex items-center justify-center py-12">
+<div class="w-48 h-48 rounded-full bg-gradient-to-br from-primary to-primary-container/20 orb-glow opacity-80 animate-pulse-slow"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-surface text-6xl" data-icon="self_improvement">self_improvement</span>
+</div>
+</div>
+<div class="relative z-10">
+<p class="text-on-surface-variant text-sm leading-relaxed">
+                        Dr. Andrew Weil tarafından popülerleştirilen bu antik teknik, vücudun doğal sakinleştirici sistemini aktive eder.
+                    </p>
+</div>
+<!-- Subtle Texture Overlay -->
+<div class="absolute inset-0 opacity-10 pointer-events-none">
+<div class="w-full h-full bg-[radial-gradient(#dfe2eb_1px,transparent_1px)] [background-size:20px_20px]"></div>
+</div>
+</div>
+<!-- Content Side -->
+<div class="flex-1 p-8 md:p-12 lg:p-16 max-h-[921px] overflow-y-auto">
+<!-- Close/Back Action (Suppressed Shell as per mandate) -->
+<div class="flex justify-between items-start mb-8">
+<button class="group flex items-center gap-3 text-on-surface-variant hover:text-primary transition-colors duration-400">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+<span class="font-label text-xs uppercase tracking-widest">Geri</span>
+</button>
+<div class="flex items-center gap-2 px-4 py-1.5 rounded-full bg-surface-container-high border border-outline-variant/15">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+<span class="text-xs font-medium text-tertiary-fixed-dim">Uyku &amp; Anksiyete</span>
+</div>
+</div>
+<!-- Heading Section -->
+<section class="mb-10">
+<h1 class="text-3xl md:text-4xl font-headline font-semibold text-on-surface mb-6 tracking-tight">4-7-8 Tekniği</h1>
+<p class="text-on-surface-variant leading-relaxed text-lg">
+                        Bu teknik, uykusuzluk ve anksiyete ile başa çıkmak için tasarlanmış bir "sinir sistemi resetleme" yöntemidir. Vücudunuzu derin bir gevşeme moduna sokarak parasempatik sinir sistemini devreye sokar.
+                    </p>
+</section>
+<!-- Benefits Bento-style Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
+<div class="p-6 rounded-lg bg-surface-container text-center">
+<span class="material-symbols-outlined text-primary mb-3" data-icon="auto_awesome">auto_awesome</span>
+<h4 class="text-sm font-semibold text-on-surface mb-1">Stres azaltma</h4>
+<p class="text-xs text-on-surface-variant">Kortizol seviyesini dengeler.</p>
+</div>
+<div class="p-6 rounded-lg bg-surface-container text-center">
+<span class="material-symbols-outlined text-primary mb-3" data-icon="bedtime">bedtime</span>
+<h4 class="text-sm font-semibold text-on-surface mb-1">Uyku kalitesi</h4>
+<p class="text-xs text-on-surface-variant">Daha hızlı dalmanızı sağlar.</p>
+</div>
+<div class="p-6 rounded-lg bg-surface-container text-center">
+<span class="material-symbols-outlined text-primary mb-3" data-icon="center_focus_strong">center_focus_strong</span>
+<h4 class="text-sm font-semibold text-on-surface mb-1">Odaklanma</h4>
+<p class="text-xs text-on-surface-variant">Zihni berraklaştırır.</p>
+</div>
+</div>
+<!-- Recommendation & Details -->
+<div class="space-y-8">
+<div class="flex items-center gap-6 p-6 rounded-xl bg-primary-container/10 border border-primary/10">
+<div class="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
+<span class="text-primary text-xl font-bold">4</span>
+</div>
+<div>
+<h3 class="text-on-primary-container font-semibold">Önerilen Oturum</h3>
+<p class="text-on-surface-variant text-sm mt-1">Günde en az iki kez 4 döngü şeklinde uygulanması tavsiye edilir.</p>
+</div>
+</div>
+<!-- Tips / İpuçları -->
+<div class="bg-surface-container-highest/30 rounded-xl p-8">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-tertiary" data-icon="lightbulb">lightbulb</span>
+<h3 class="text-lg font-medium text-on-surface">İpuçları</h3>
+</div>
+<ul class="space-y-4">
+<li class="flex gap-4">
+<span class="text-tertiary font-mono text-sm mt-1">01</span>
+<p class="text-on-surface-variant text-sm leading-relaxed">
+                                    Dilinizin ucunu üst dişlerinizin arkasındaki etli kısma koyun ve tüm egzersiz boyunca orada tutun.
+                                </p>
+</li>
+<li class="flex gap-4">
+<span class="text-tertiary font-mono text-sm mt-1">02</span>
+<p class="text-on-surface-variant text-sm leading-relaxed">
+                                    Nefesinizi dışarı verirken ağzınızdan bir "fıss" sesi çıkararak verin.
+                                </p>
+</li>
+<li class="flex gap-4">
+<span class="text-tertiary font-mono text-sm mt-1">03</span>
+<p class="text-on-surface-variant text-sm leading-relaxed">
+                                    Sürelerden çok ritme odaklanın. 4-7-8 oranını korumak mutlak saniyelerden daha önemlidir.
+                                </p>
+</li>
+</ul>
+</div>
+</div>
+<!-- Footer Action -->
+<div class="mt-12 pt-8 border-t border-outline-variant/10 flex justify-center md:justify-end">
+<button class="px-10 py-4 rounded-full bg-gradient-to-r from-primary to-primary-container text-on-primary font-medium hover:scale-[1.02] active:scale-95 transition-all duration-400 shadow-lg shadow-primary/20">
+                        Egzersizi Başlat
+                    </button>
+</div>
+</div>
+</main>
+<!-- Decorative Floating Elements -->
+<div class="absolute top-20 left-40 w-2 h-2 rounded-full bg-primary/30 blur-[1px]"></div>
+<div class="absolute bottom-40 right-60 w-3 h-3 rounded-full bg-tertiary/20 blur-[1px]"></div>
+</div>
+</body></html>

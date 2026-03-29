@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary": "#ffb77c",
+              "on-surface": "#dfe2eb",
+              "on-tertiary-fixed-variant": "#6d3900",
+              "tertiary-container": "#e48f43",
+              "on-primary-fixed": "#001c38",
+              "background": "#10141a",
+              "on-tertiary-fixed": "#2e1500",
+              "secondary": "#c2c7d0",
+              "secondary-fixed-dim": "#c2c7d0",
+              "outline-variant": "#414752",
+              "surface-container-lowest": "#0a0e14",
+              "tertiary-fixed-dim": "#ffb77c",
+              "surface-container-highest": "#31353c",
+              "surface-container": "#1c2026",
+              "on-secondary": "#2c3138",
+              "secondary-fixed": "#dee2ec",
+              "primary-fixed": "#d3e4ff",
+              "surface-container-low": "#181c22",
+              "on-tertiary": "#4d2700",
+              "inverse-primary": "#0060aa",
+              "outline": "#8b919d",
+              "on-primary-fixed-variant": "#004882",
+              "on-error": "#690005",
+              "surface-container-high": "#262a31",
+              "surface": "#10141a",
+              "on-tertiary-container": "#5a2e00",
+              "on-primary-container": "#003a6b",
+              "error": "#ffb4ab",
+              "secondary-container": "#42474f",
+              "primary-container": "#58a6ff",
+              "tertiary-fixed": "#ffdcc2",
+              "surface-bright": "#353940",
+              "surface-variant": "#31353c",
+              "on-surface-variant": "#c0c7d4",
+              "inverse-surface": "#dfe2eb",
+              "surface-tint": "#a2c9ff",
+              "on-primary": "#00315c",
+              "primary-fixed-dim": "#a2c9ff",
+              "surface-dim": "#10141a",
+              "error-container": "#93000a",
+              "on-error-container": "#ffdad6",
+              "on-background": "#dfe2eb",
+              "on-secondary-fixed": "#171c23",
+              "on-secondary-fixed-variant": "#42474f",
+              "on-secondary-container": "#b1b5bf",
+              "inverse-on-surface": "#2d3137",
+              "primary": "#a2c9ff"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'wght' 200, 'opsz' 24;
+        font-size: 24px;
+      }
+      .breathing-orb {
+        background: radial-gradient(circle, #a2c9ff 0%, #58a6ff 100%);
+        box-shadow: 0 0 40px rgba(162, 201, 255, 0.2);
+      }
+      .glass-effect {
+        background: rgba(88, 166, 255, 0.12);
+        backdrop-filter: blur(20px);
+      }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary/30 antialiased overflow-hidden">
+<!-- SideNavBar -->
+<aside class="h-full w-72 fixed left-0 top-0 overflow-y-auto bg-slate-950 dark:bg-slate-950 font-['Inter'] antialiased tracking-tight shadow-[24px_0_48px_rgba(0,0,0,0.4)] flex flex-col gap-8 p-8 border-r border-white/5 z-50">
+<div class="flex flex-col gap-2">
+<span class="text-2xl font-light tracking-[-0.02em] text-blue-200">Nefes</span>
+<span class="text-xs text-slate-400 font-light tracking-widest uppercase">Derin bir nefes al</span>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-4 px-4 py-3 text-slate-400 hover:text-blue-100 transition-colors duration-400 group" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span>Ana Dashboard</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-blue-200 bg-white/5 rounded-full font-medium transition-all duration-400 cubic-bezier(0.4,0,0.2,1) active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="self_improvement" style="font-variation-settings: 'FILL' 1;">self_improvement</span>
+<span>Egzersiz</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-slate-400 hover:text-blue-100 transition-colors duration-400 group" href="#">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span>Geçmiş</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-slate-400 hover:text-blue-100 transition-colors duration-400 group" href="#">
+<span class="material-symbols-outlined" data-icon="insights">insights</span>
+<span>İstatistikler</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-slate-400 hover:text-blue-100 transition-colors duration-400 group" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Ayarlar</span>
+</a>
+</nav>
+<div class="mt-auto pt-8 border-t border-white/5 flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-high overflow-hidden">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="professional portrait of a calm person with soft ambient lighting and blurred natural background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdI1Oh6IiJwoLA0-1q8ESyc2JWJhvaqsvHDMbeDVdX3g-3OXAWWPlzhmKE2V7kBqWgGP6ClTCFpZBJl7XagButXstPNCQ01WjMCQwmP3zMqmHPzSku6sRgbDhfS4j3hjxjdR0gx-3KoZuFic3aIH5tezFfCvmDKYuA7F8QkgU1rH_zp3X2lbCJb-QAwyJb6T2hvnLzrhoV6XTnPhto109msbdX4aopNX38M-8uo1A4MYEIFX58sQ2vWeHrtUPDd2w6Ifjt4w-L7eLW"/>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-medium text-blue-200">Kullanıcı</span>
+<span class="text-xs text-slate-500">Premium Üye</span>
+</div>
+</div>
+</aside>
+<!-- Main Content Shell -->
+<main class="ml-72 min-h-screen flex flex-col relative overflow-y-auto">
+<!-- TopAppBar -->
+<header class="w-full h-20 sticky top-0 z-40 bg-transparent flex justify-between items-center px-12 font-['Inter'] text-sm uppercase tracking-widest font-light text-blue-200 no-border tonal-layering">
+<div class="flex items-center gap-2">
+<span class="text-slate-400">Teknikler</span>
+<span class="material-symbols-outlined text-[12px]" data-icon="chevron_right">chevron_right</span>
+<span class="text-blue-200 font-semibold">4-7-8 Tekniği</span>
+</div>
+<div class="flex items-center gap-8">
+<button class="hover:text-blue-100 transition-opacity duration-400">Kılavuz</button>
+<button class="hover:text-blue-100 transition-opacity duration-400">Destek</button>
+<div class="h-8 w-[1px] bg-outline-variant/20 mx-2"></div>
+<button class="flex items-center gap-2 text-blue-200 font-semibold">
+                    Profil
+                    <span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Content Canvas -->
+<div class="flex-1 p-12 grid grid-cols-12 gap-12 max-w-[1600px]">
+<!-- Left Panel: Hero Section -->
+<section class="col-span-5 flex flex-col gap-12">
+<div class="relative group">
+<div class="absolute -inset-1 bg-gradient-to-r from-primary/20 to-tertiary/20 rounded-xl blur-2xl opacity-50"></div>
+<div class="relative bg-surface-container-low p-12 rounded-xl flex flex-col items-start gap-8 min-h-[500px] justify-between">
+<div class="flex flex-col gap-4">
+<span class="material-symbols-outlined text-primary text-5xl" data-icon="self_improvement" style="font-variation-settings: 'FILL' 1;">self_improvement</span>
+<h1 class="text-5xl font-extralight tracking-tight leading-tight text-blue-200">
+                                Zihnini <br/>
+<span class="font-normal">Serbest Bırak</span>
+</h1>
+<p class="text-on-surface-variant text-lg leading-relaxed max-w-sm mt-4">
+                                4-7-8 tekniği, sinir sistemini doğal bir şekilde yatıştıran, antik nefes geleneklerinden ilham alan modern bir rahatlama yöntemidir.
+                            </p>
+</div>
+<div class="w-full flex justify-center py-8">
+<div class="breathing-orb w-48 h-48 rounded-full flex items-center justify-center relative">
+<div class="absolute inset-0 rounded-full border border-primary/30 animate-ping opacity-20"></div>
+<span class="text-on-primary text-4xl font-light">4-7-8</span>
+</div>
+</div>
+<button class="w-full py-5 glass-effect rounded-full text-primary font-medium tracking-widest uppercase text-sm hover:bg-primary/20 transition-all duration-400 group flex items-center justify-center gap-3">
+                            Egzersizi Başlat
+                            <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" data-icon="play_arrow">play_arrow</span>
+</button>
+</div>
+</div>
+<!-- Session Info -->
+<div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/10 flex justify-between items-center">
+<div class="flex flex-col">
+<span class="text-xs font-label tracking-widest text-slate-500 uppercase">Önerilen Süre</span>
+<span class="text-2xl font-light text-blue-200 mt-1">5 - 10 Dakika</span>
+</div>
+<div class="h-12 w-[1px] bg-outline-variant/20"></div>
+<div class="flex flex-col text-right">
+<span class="text-xs font-label tracking-widest text-slate-500 uppercase">Zorluk Seviyesi</span>
+<span class="text-2xl font-light text-tertiary mt-1">Başlangıç</span>
+</div>
+</div>
+</section>
+<!-- Right Panel: Details & Content -->
+<section class="col-span-7 flex flex-col gap-12">
+<!-- Description Section -->
+<div class="flex flex-col gap-6">
+<h2 class="text-sm font-label tracking-[0.2em] text-slate-500 uppercase">Teknik Hakkında</h2>
+<p class="text-xl font-light leading-relaxed text-on-surface/90">
+                        Bu teknik, "rahatlatıcı nefes" olarak da bilinir. Vücudun parasempatik sinir sistemini aktive ederek, savaş ya da kaç tepkisini kapatır ve derin bir sükunet hali yaratır.
+                    </p>
+</div>
+<!-- Benefits Grid -->
+<div class="grid grid-cols-3 gap-6">
+<div class="bg-surface-container-low p-8 rounded-xl flex flex-col gap-4 border border-transparent hover:border-primary/20 transition-all duration-400 group">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform" data-icon="dark_mode">dark_mode</span>
+<h3 class="text-blue-200 font-medium">Uyku Kalitesi</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">Uykusuzluğu azaltır ve uykuya dalma süresini kısaltır.</p>
+</div>
+<div class="bg-surface-container-low p-8 rounded-xl flex flex-col gap-4 border border-transparent hover:border-tertiary/20 transition-all duration-400 group">
+<span class="material-symbols-outlined text-tertiary group-hover:scale-110 transition-transform" data-icon="bolt">bolt</span>
+<h3 class="text-blue-200 font-medium">Stres Yönetimi</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">Anksiyete krizlerini ve akut stres anlarını yönetir.</p>
+</div>
+<div class="bg-surface-container-low p-8 rounded-xl flex flex-col gap-4 border border-transparent hover:border-primary/20 transition-all duration-400 group">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform" data-icon="psychology">psychology</span>
+<h3 class="text-blue-200 font-medium">Odaklanma</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">Zihinsel bulanıklığı giderir ve konsantrasyonu artırır.</p>
+</div>
+</div>
+<!-- Application Tips List -->
+<div class="bg-surface-container-high/40 p-10 rounded-xl flex flex-col gap-8">
+<h2 class="text-sm font-label tracking-[0.2em] text-slate-500 uppercase">Uygulama İpuçları</h2>
+<div class="flex flex-col gap-8">
+<div class="flex gap-6 items-start">
+<span class="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center text-sm font-bold shrink-0">1</span>
+<div class="flex flex-col gap-2">
+<h4 class="text-blue-200 font-medium">Doğru Duruş</h4>
+<p class="text-on-surface-variant text-sm">Omurganız dik olacak şekilde oturun veya tamamen düz bir zemine uzanın.</p>
+</div>
+</div>
+<div class="flex gap-6 items-start">
+<span class="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center text-sm font-bold shrink-0">2</span>
+<div class="flex flex-col gap-2">
+<h4 class="text-blue-200 font-medium">Dil Pozisyonu</h4>
+<p class="text-on-surface-variant text-sm">Dilinizin ucunu üst ön dişlerinizin hemen arkasındaki dokuya dayayın.</p>
+</div>
+</div>
+<div class="flex gap-6 items-start">
+<span class="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center text-sm font-bold shrink-0">3</span>
+<div class="flex flex-col gap-2">
+<h4 class="text-blue-200 font-medium">Sessizce Inhale</h4>
+<p class="text-on-surface-variant text-sm">Burnunuzdan sessizce 4 saniye boyunca derin bir nefes alın.</p>
+</div>
+</div>
+<div class="flex gap-6 items-start">
+<span class="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center text-sm font-bold shrink-0">4</span>
+<div class="flex flex-col gap-2">
+<h4 class="text-blue-200 font-medium">7 Saniye Tutun</h4>
+<p class="text-on-surface-variant text-sm">Nefesinizi 7 saniye boyunca zihninizde sayarak tutun.</p>
+</div>
+</div>
+<div class="flex gap-6 items-start">
+<span class="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center text-sm font-bold shrink-0">5</span>
+<div class="flex flex-col gap-2">
+<h4 class="text-blue-200 font-medium">Sesli Exhale</h4>
+<p class="text-on-surface-variant text-sm">Ağzınızdan 'vuv' sesi çıkararak 8 saniye boyunca nefes verin.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Footer Visual -->
+<div class="mt-auto h-48 relative overflow-hidden opacity-40">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent"></div>
+<img class="w-full h-full object-cover" data-alt="abstract serene water surface with minimal ripples and soft blue moonlight reflections" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDErGunK1wa4o7YZEb9ZC1UjOjji6srTeLWMmSjxbJyO46eNH-Ybr2A6N9emSpKvNQl4-4u6YMgGR5KWbSUI0MWWR3i4-0sFlWfBt8pAwICLekdpzCDGf4bAzK66vgKpqAViQ-jIU61UQcCCoHUm1NfCBVXXhJ3idWfLF_-fq05TvoAla4zFzhmtoYdRgTur-Ic8i-yRLfUGZTigN8yeAZLTtadd0_m8IhvrPn5Lezhe19xlUder8B3Py5zkAZGSyK4PsuKJ7Y1ZDyC"/>
+</div>
+</main>
+<!-- Contextual Floating Action Button (Only for Exercise Page) -->
+<button class="fixed bottom-12 right-12 w-16 h-16 rounded-full bg-tertiary text-on-tertiary shadow-2xl flex items-center justify-center hover:scale-110 transition-all duration-400 active:scale-90 group z-50">
+<span class="material-symbols-outlined text-3xl" data-icon="favorite" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="absolute right-20 bg-surface-container-high px-4 py-2 rounded-lg text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none border border-outline-variant/20">Favorilere Ekle</span>
+</button>
+</body></html>

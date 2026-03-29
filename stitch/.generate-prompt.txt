@@ -1,0 +1,240 @@
+Generate 17 screens for the following application.
+
+=== PRD (Product Requirements Document) ===
+# Nefes Egzersizi Uygulaması — PRD
+
+## 1. Proje Genel Bakışı
+
+**Proje Adı:** Nefes Egzersizi (Breathe)
+
+**Proje Tipi:** Mobil odaklı tek sayfalık web uygulaması (SPA)
+
+**Çekirdek İşlev:** Animasyonlu nefes al/ver zamanlayıcı ile rehberli nefes egzersizleri. Kullanıcılar farklı nefes tekniklerini seçerek seans başlatabilir, geçmiş seanslarını ve istatistiklerini görüntüleyebilir.
+
+**Hedef Kullanıcı:** Stres azaltma, uyku kalitesi iyileştirme, odaklanma ve genel wellness hedefleyen bireyler.
+
+**Temel Değer Önerisi:** Sade, dikkat dağıtmayan, sakinleştirici bir arayüzle bilimsel nefes tekniklerini erişilebilir kılmak.
+
+---
+
+## 2. Hedef Platform
+
+- **Birincil:** Mobil tarayıcı (iOS Safari, Android Chrome)
+- **İkincil:** Masaüstü tarayıcı (tablet uyumlu)
+- **PWA desteği:** Evet (offline çalışabilirlik için)
+- **Native wrapper:** Gerekli değil (web tabanlı)
+
+---
+
+## 3. Fonksiyonel Gereksinimler
+
+### 3.1 Nefes Teknikleri Modülü
+
+| Teknik | Açıklama | Parametreler |
+|--------|----------|--------------|
+| **4-7-8 Tekniği** | Dr. Andrew Weil'in gevşeme tekniği | 4sn nefes al, 7sn tut, 8sn ver |
+| **Kare Nefes (Box Breathing)** | 4 eşit parça | 4sn nefes al, 4sn tut, 4sn ver, 4sn tut |
+| **Basit Nefes** | Rahatlatıcı temel teknik | 4sn nefes al, 4sn ver |
+| **Rahatlatıcı Nefes** | Uzun exhale ağırlıklı | 4sn nefes al, 2sn tut, 6sn ver |
+
+### 3.2 Egzersiz Oturumu
+
+- **Egzersiz süresi seçimi:** 1, 3, 5, 10 dakika (varsayılan: 5 dakika)
+- **Döngü sayısı:** Her teknik için belirlenen adımlar otomatik hesaplanır
+- **Duraklatma/Devam:** Egzersiz sırasında geçici olarak duraklatılabilir
+- **Erken bitirme:** Kullanıcı istediği zaman seansı sonlandırabilir
+- **Tamamlama bildirimi:** Seans sonunda görsel + titreşim (mobil) bildirimi
+
+### 3.3 Animasyon Sistemi
+
+- **Ana animasyon:** Merkezi daire (nefes alırken büyür, verirken küçülür)
+- **Animasyon türü:** CSS transitions + requestAnimationFrame
+- **Renk geçişleri:** Her nefes aşamasına göre (al/tut/ver)
+- **Yönergeler:** Ekranda "NEFES AL", "TUT", "VER" textleri
+
+### 3.4 Oturum Geçmişi
+
+- **Kaydedilen veriler:**
+  - Tarih ve saat
+  - Kullanılan teknik
+  - Seans süresi
+  - Tamamlanan döngü sayısı
+- **Liste görünümü:** Ters kronolojik sıralama
+- **Silme:** Tek tek veya tümünü temizle seçeneği
+- **Depolama:** LocalStorage (yaygın tarayıcı desteği, kolay reset)
+
+### 3.5 İstatistikler
+
+| Metrik | Açıklama |
+|--------|----------|
+| **Toplam seans** | Tüm zamanların seans sayısı |
+| **Toplam süre** | Dakika cinsinden toplam egzersiz süresi |
+| **Bu hafta** | Haftalık seans sayısı ve süresi |
+| **En çok kullanılan teknik** | Favori nefes tekniği |
+| **Günlük seri** | Ardışık gün sayısı |
+| **Ortalama seans süresi** | Hesaplanmış ortalama |
+
+### 3.6 Ayarlar
+
+- **Sesli yönerge:** Açık/Kapalı (nefes al/ver sesli komutları)
+- **Titreşim:** Açık/Kapalı (seans tamamlama bildirimi)
+- **Varsayılan süre:** 1/3/5/10 dakika seçimi
+- **Veri yönetimi:** Tüm geçmişi temizle
+
+---
+
+## 4. Teknik Gereksinimler
+
+### 4.1 Teknoloji Stack
+
+| Katman | Teknoloji |
+|--------|-----------|
+| **Framework** | Vite + React 18 |
+| **Dil** | TypeScript |
+| **Stil** | CSS Modules + CSS Variables |
+| **State yönetimi** | React useState/useReducer (basit state için yeterli) |
+| **Animasyon** | CSS transitions + React state |
+| **Veri depolama** | LocalStorage API |
+| **PWA** | Vite PWA plugin |
+| **Build** | vite build |
+
+### 4.2 Proje Yapısı
+
+```
+src/
+├── components/
+│   ├── BreathCircle/        # Ana nefes animasyonu
+│   ├── Timer/               # Geri sayım sayacı
+│   ├── TechniqueSelector/   # Teknik seçim kartları
+│   ├── SessionHistory/      # Geçmiş liste
+│   ├── Stats/               # İstatistikler paneli
+│   └── Settings/            # Ayarlar
+├── hooks/
+│   ├── useBreathTimer.ts    # Nefes zamanlayıcı mantığı
+│   ├── useLocalStorage.ts   # LocalStorage hook
+│   └── useStats.ts          # İstatistik hesaplama
+├── types/
+│   └── index.ts             # TypeScript tipleri
+├── utils/
+│   └── storage.ts           # Storage yardımcıları
+├── styles/
+│   ├── variables.css        # CSS değişkenleri (tema)
+│   └── global.css           # Global stiller
+├── App.tsx
+└── main.tsx
+```
+
+### 4.3 Veri Modeli
+
+```typescript
+interface Session {
+  id: string;           // UUID
+  date: string;          // ISO 8601 timestamp
+  technique: TechniqueType;
+  durationMinutes: number;
+  cyclesCompleted: number;
+}
+
+type TechniqueType = '4-7-8' | 'box' | 'simple' | 'relaxing';
+
+interface Settings {
+  soundEnabled: boolean;
+  vibrationEnabled: boolean;
+  defaultDuration: 1 | 3 | 5 | 10;
+}
+```
+
+### 4.4 LocalStorage Şeması
+
+| Key | Değer |
+|-----|-------|
+| `breathe_sessions` | `Session[]` JSON |
+| `breathe_settings` | `Settings` JSON |
+
+---
+
+## 5. UI/UX Gereksinimler
+
+### 5.1 Tasarım Dili
+
+**Tema:** Sakinleştirici koyu tema (dark mode only)
+
+**Renk Paleti:**
+
+| Renk | Hex | Kullanım |
+|------|-----|----------|
+| **Arka plan** | `#0D1117` | Ana zemin |
+| **Yüzey** | `#161B22` | Kartlar, paneller |
+| **Yüzey yükseltilmiş** | `#21262D` | Hover, active states |
+| **Ana vurgu** | `#58A6FF` | CTA, aktif durumlar |
+| **Nefes al** | `#7EE787` | İnhale aşaması |
+| **Nefes ver** | `#F78166` | Exhale aşaması |
+| **Tut** | `#D29922` | Hold aşaması |
+| **Metin birincil** | `#E6EDF3` | Ana içerik |
+| **Metin ikincil** | `#8B949E` | Yardımcı içerik |
+
+**Tipografi:**
+- Font: `Inter, system-ui, sans-serif`
+- Başlık: 24-32px, font-weight 600
+- Gövde: 16px, font-weight 400
+- Küçük metin: 14px, font-weight 400
+
+**Boşluk Sistemi:**
+- Base unit: 4px
+- Spacing scale: 4, 8, 12, 16, 24, 32, 48, 64px
+- Border radius: 8px (kartlar), 50% (daireler)
+
+### 5.2 Sayfa Akışı
+
+```
+[Ana Ekran] ─────► [Egzersiz Ekranı] ─────► [Tamamlama Ekranı]
+     │                   │
+     ▼                   ▼
+[Geçmiş]           [Duraklatildi]
+     │
+     ▼
+[İstatistikler]
+     │
+     ▼
+[Ayarlar]
+```
+
+### 5.3 etkileşim Kalıpları
+
+- **Teknik seçimi:** Kart tıklama → animate on selection → otomatik devam
+- **Egzersiz başlatma:** Büyük merkezi buton (60px çaplı, yuvarlak)
+- **
+...(truncated)
+
+=== DESIGN SYSTEM ===
+aesthetic: organic
+  palette: wellness-dark
+  heading_font: SORA
+  body_font: NUNITO_SANS
+  icon_library: Lucide React
+
+=== SCREENS TO GENERATE ===
+Screen 1: Breath Flow PRD — PRD reference document
+Screen 2: Teknik Seçimi — Technique selection screen with breathing method cards
+Screen 3: Ana Dashboard — Main dashboard with breathing circle and quick start
+Screen 4: Teknik Detay — Individual breathing technique details and instructions
+Screen 5: Geçmiş — Session history list with past exercises
+Screen 6: Ayarlar — App settings: sound, vibration, default duration
+Screen 7: İstatistikler — Statistics dashboard with weekly charts and totals
+Screen 8: Ana Dashboard — Alternative main dashboard layout
+Screen 9: Seans Tamamlandı — Session completion modal with summary
+Screen 10: Teknik Seçimi — Alternative technique selection layout
+Screen 11: Ayarlar — Alternative settings layout
+Screen 12: Geçmiş — Alternative history list layout
+Screen 13: Nefes Egzersizi — Active breathing exercise screen with animation
+Screen 14: Nefes Egzersizi — Alternative exercise screen layout
+Screen 15: İstatistikler — Alternative statistics dashboard
+Screen 16: Seans Tamamlandı — Alternative completion screen
+Screen 17: Teknik Detay — Alternative technique detail layout
+
+=== RULES ===
+- All visible text (buttons, labels, headings, placeholders, menu items) MUST be in Turkish language.
+- Use Material Symbols icons.
+- Consistent design system across ALL screens.
+- Each screen must be a complete, detailed, production-ready UI design.
+- Dark theme with the colors specified in design system.
